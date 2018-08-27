@@ -1,10 +1,10 @@
 package model;
 
-public class LinkedList<E> implements SimpleLinkedList<E>{
+public class LinkedList<E> implements LinkedListInterface<E>{
 	
 	private Node<E> first;
 	private Node<E> last;
-	private int size;
+	private long size;
 	
 	public LinkedList() {
 		this.size = 0;
@@ -29,7 +29,7 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 	}
 	
 	@Override
-	public boolean assingValue(int pos, E element) {
+	public boolean assingValue(long pos, E element) {
 		Node<E> temp = first;
 		while(temp != null) {
 			if(indexOf(temp.getElement()) == pos) {
@@ -42,7 +42,7 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 	}
 
 	@Override
-	public boolean deleteNode(int pos) {
+	public boolean deleteNode(long pos) {
 		if(pos == 0) {
 			deleteFirstNode();
 			return true;
@@ -58,7 +58,7 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 
 	@Override
 	public E deleteNode(E element) {
-		int pos = search(element);
+		long pos = search(element);
 		if(pos != -1) {
 			E result = getElement(pos);
 			deleteNode(pos);
@@ -68,7 +68,7 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 	}
 
 	@Override
-	public int getSize() {
+	public long getSize() {
 		return this.size;
 	}
 
@@ -78,7 +78,7 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 	}
 	
 	@Override
-	public int search(E element) {
+	public long search(E element) {
 		Node<E> temp = first;
 		while(temp != null) {
 			if(temp.getElement().equals(element)) {
@@ -90,7 +90,7 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 	}
 
 	@Override
-	public E getElement(int pos) {
+	public E getElement(long pos) {
 		Node<E> temp = first;
 		if(pos == 0) {
 			return temp.getElement();
@@ -118,8 +118,8 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 	}
 	
 	@Override
-	public int indexOf(E element) {
-		int index = 0;
+	public long indexOf(E element) {
+		long index = 0;
 	    Node<E> current = first;
 
 	    while (current != null) {
@@ -141,9 +141,9 @@ public class LinkedList<E> implements SimpleLinkedList<E>{
 		}
 	}
 	
-	private void deleteBetweenNode(int pos) {
+	private void deleteBetweenNode(long pos) {
 		Node<E> before = first;
-		for(int i = 0; i < pos -1; i++) {
+		for(long i = 0; i < pos -1; i++) {
 			before = before.getNext();
 		}
 		Node<E> temp = before.getNext();

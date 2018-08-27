@@ -62,10 +62,30 @@ public class Main{
 		test.deleteAll();
 		String text1 = test.isEmpty() ? "El arreglo esta vacio": "Arreglo aun tiene cosas adentro";
 		System.out.println(text1);
-		System.out.println(test.getSize() + "");
+		System.out.println(test.getSize() + "\n");
 		
 		
+		StackList<String> stack = new StackList<String>();
 		
+		stack.push("Hola");
+		stack.push("Fredo");
+		System.out.println(stack.getSize());
+		System.out.println(stack.top());
+		System.out.println(stack.isEmpty());
+		System.out.println(stack.isElement("Fredo"));
+		stack.pop();
+		System.out.println(stack.getSize());
+		stack.pop();
+		System.out.println(stack.getSize());
+		System.out.println(stack.pop());
+		System.out.println(stack.getSize());
+		System.out.println(stack.search("Hello world"));
+		System.out.println(stack.isElement("Fredo"));
+		stack.push("Hola");
+		stack.push("Fredo");
+		stack.assingValue(0, "GodoFredo");
+		System.out.println(stack.isElement("GodoFredo"));
+		System.out.println(stack.top());
 	}
 
 }
