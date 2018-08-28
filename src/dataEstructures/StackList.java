@@ -1,4 +1,4 @@
-package model;
+package dataEstructures;
 
 public class StackList<E> implements StackListInterface<E>{
 	

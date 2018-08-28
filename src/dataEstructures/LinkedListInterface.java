@@ -1,4 +1,4 @@
-package model;
+package dataEstructures;
 
 public interface LinkedListInterface<T> {
 	public boolean addNode(T element);

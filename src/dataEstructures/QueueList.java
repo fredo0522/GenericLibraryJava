@@ -1,4 +1,4 @@
-package model;
+package dataEstructures;
 
 public class QueueList<E> implements QueueInterface<E> {
 	

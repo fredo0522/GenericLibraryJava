@@ -1,4 +1,4 @@
-package model;
+package dataEstructures;
 
 public class LinkedList<E> implements LinkedListInterface<E>{
 	

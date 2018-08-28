@@ -1,8 +1,8 @@
-package GUI;
+package testDataEstructures;
 
-import model.*;
+import dataEstructures.*;
 
-public class Main{
+public class TestEstructures{
 
 	public static void main(String[] args) {
 		LinkedList<String> test = new LinkedList<String>();
@@ -64,7 +64,7 @@ public class Main{
 		System.out.println(text1);
 		System.out.println(test.getSize() + "\n");
 		
-		
+		//StackList Test
 		StackList<String> stack = new StackList<String>();
 		
 		stack.push("Hola");
@@ -85,7 +85,21 @@ public class Main{
 		stack.push("Fredo");
 		stack.assingValue(0, "GodoFredo");
 		System.out.println(stack.isElement("GodoFredo"));
-		System.out.println(stack.top());
+		System.out.println(stack.top() + "\n");
+		
+		
+		//QueueList Test
+		QueueList<String> queue = new QueueList<String>();
+		queue.equeue("Fredo was here");
+		System.out.println(queue.front());
+		System.out.println(queue.getSize());
+		queue.equeue("Fredo");
+		queue.equeue("Random Words");
+		System.out.println(queue.front());
+		System.out.println(queue.getSize());
+		System.out.println(queue.dequeue());
+		System.out.println(queue.getSize());
+		System.out.println(queue.isElement("Random Words"));
 	}
 
 }

@@ -1,4 +1,4 @@
-package model;
+package dataEstructures;
 
 public interface StackListInterface<T> {
 	public boolean push(T element);
