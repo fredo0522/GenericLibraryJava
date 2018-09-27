@@ -15,7 +15,7 @@ public class QueueList<E> implements QueueInterface<E> {
 		Node<E> newElement = new Node<E>(element);
 		if(first == null) {
 			first = newElement;
-			last = newElement;
+			last = first;
 			size++;
 		}else {
 			last.setNext(newElement);
