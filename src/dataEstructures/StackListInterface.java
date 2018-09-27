@@ -8,5 +8,4 @@ public interface StackListInterface<T> {
 	public long getSize();
 	public void deleteAll();
 	public boolean isElement(T element);
-	public long search(T element);
 }

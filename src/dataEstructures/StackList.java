@@ -71,19 +71,4 @@ public class StackList<E> implements StackListInterface<E>{
 		}		
 		return false;
 	}
-
-	@Override
-	public long search(E element) {
-		if(top != null) {
-			if(element.equals(top.getElement())) return size - 1;
-			Node<E> temp = top.getNext();
-			for(long i = size -2; i >= 0; i--) {
-				if(temp.getElement().equals(element)) {
-					return i;
-				}
-				temp = temp.getNext();
-			}
-		}		
-		return -1;
-	}
 }
