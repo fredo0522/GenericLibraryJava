@@ -11,9 +11,17 @@ public class StackList<E> implements StackListInterface<E>{
 	
 	@Override
 	public boolean push(E element) {
-		top = new Node<E>(element,this.top);
-		size++;
-		return true;	
+		if(size == 0) {
+			top = new Node<E>(element);
+			size++;
+			return true;
+		}else {
+			Node<E> temp = new Node<E>(element);
+			temp.setNext(top);
+			top = temp;
+			size++;
+			return true;
+		}
 	}
 
 	@Override
@@ -77,18 +85,5 @@ public class StackList<E> implements StackListInterface<E>{
 			}
 		}		
 		return -1;
-	}
-
-	@Override
-	public boolean assingValue(long pos, E element) {
-		Node<E> temp = top;
-		while(temp != null) {
-			if(search(temp.getElement()) == pos) {
-				temp.setElement(element);
-				return true;
-			}
-			temp = temp.getNext();
-		}
-		return false;
 	}
 }

@@ -9,5 +9,4 @@ public interface StackListInterface<T> {
 	public void deleteAll();
 	public boolean isElement(T element);
 	public long search(T element);
-	public boolean assingValue(long pos, T element);
 }
