@@ -6,7 +6,7 @@ public interface LinkedListInterface<T> {
 	public boolean deleteNode(long pos);
 	public T deleteNode(T element);
 	public long getSize();
-	public boolean isElementInList(T element);
+	public boolean isElement(T element);
 	public long search(T element);
 	public T getElement(long pos);
 	public boolean isEmpty();

@@ -46,10 +46,10 @@ public class LinkedList<E> implements LinkedListInterface<E>{
 		if(pos == 0) {
 			deleteFirstNode();
 			return true;
-		}else if (pos > 0 && pos < size - 1) {
+		}else if (pos > 0 && pos < this.size - 1) {
 			deleteBetweenNode(pos);
 			return true;
-		}else if( pos == size -1){
+		}else if( pos == this.size - 1){
 			deleteLast();
 			return true;
 		}
@@ -73,7 +73,7 @@ public class LinkedList<E> implements LinkedListInterface<E>{
 	}
 
 	@Override
-	public boolean isElementInList(E element) {
+	public boolean isElement(E element) {
 		return search(element) != -1 ? true : false;
 	}
 	
@@ -81,9 +81,7 @@ public class LinkedList<E> implements LinkedListInterface<E>{
 	public long search(E element) {
 		Node<E> temp = first;
 		while(temp != null) {
-			if(temp.getElement().equals(element)) {
-				return indexOf(temp.getElement());
-			}
+			if(temp.getElement().equals(element)) return indexOf(temp.getElement());
 			temp = temp.getNext();
 		}
 		return -1;
@@ -123,9 +121,7 @@ public class LinkedList<E> implements LinkedListInterface<E>{
 	    Node<E> current = first;
 
 	    while (current != null) {
-	        if (current.getElement().equals(element)) {
-	            return index;
-	        }
+	        if (current.getElement().equals(element)) return index;
 	        index++;
 	        current = current.getNext();
 	    }
