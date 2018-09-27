@@ -62,9 +62,4 @@ class TestStackList {
 		boolean noElement = stack.isElement("50");
 		assertTrue(element && !noElement);
 	}
-	
-	@Test
-	void testSearch() {
-		
-	}
 }
