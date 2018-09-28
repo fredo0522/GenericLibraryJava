@@ -1,5 +1,11 @@
 package dataEstructures;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class StackList<E> implements StackListInterface<E>{
 	
 	private long size;
@@ -70,5 +76,18 @@ public class StackList<E> implements StackListInterface<E>{
 			}
 		}		
 		return false;
+	}
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		
+		String k = in.readLine();
+		char[] ks = k.toCharArray();
+		int n = Character.valueOf(ks[0]);
+				
+		out.write(n);
+		out.close();
 	}
 }
