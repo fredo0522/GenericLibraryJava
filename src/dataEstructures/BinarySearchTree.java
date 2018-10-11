@@ -40,30 +40,40 @@ public class BinarySearchTree<E extends Comparable<E>> implements TreeInterface<
 				return;
 			}
 			insert(node.getRight(), element);
+		}else{
+			TreeNode<E> add = new TreeNode<E>(element);
+			if(node.getLeft() == null) {
+				add.setParent(node);
+				node.setLeft(add);
+				size++;
+			}else {
+				node.getLeft().setParent(add);
+				add.setLeft(node.getLeft());
+				add.setParent(node);
+				node.setLeft(add);
+				size++;
+			}
 		}
 	}
 
 	@Override
 	public void delete(E element) {
-		delete(root, null, element);
-	}
-	
-	public boolean delete(TreeNode<E> current, TreeNode<E> parent, E elemet) {
 		
-		if(current == null) return false;
-		
-		int comp = current.getElement().compareTo(elemet);
-		
-		if(comp < 0) {
-			
-		}
-		return true;
 	}
 
 	@Override
 	public E search(E element) {
-		// TODO Auto-generated method stub
-		return null;
+		TreeNode<E> temp = this.root;
+		boolean found = false;
+		while(temp != null && !found) {
+			if(temp.getElement().compareTo(element) < 0) 
+				temp = temp.getLeft();
+			else if(temp.getElement().compareTo(element) > 0) 
+				temp = temp.getRight();
+			else 
+				found = true;
+		}
+		return found ? temp.getElement() : null;
 	}
 
 	@Override
