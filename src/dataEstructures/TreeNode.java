@@ -11,13 +11,6 @@ public class TreeNode<E> {
 		this.element = element;
 	}
 	
-	public TreeNode(E element, TreeNode<E> left, TreeNode<E> right, TreeNode<E> parent) {
-		this. element = element;
-		this.right = right;
-		this.left = left;
-		this.parent = parent;
-	}
-	
 	public E getElement() {
 		return element;
 	}
