@@ -26,17 +26,8 @@ public class BinarySearchTree<E extends Comparable<E>> implements TreeInterface<
 		
 		int compare = adding.getElement().compareTo(current.getElement());
 		
-		if(compare < 0) {
-			if(current.getLeft() == null) {
-				adding.setParent(current);
-				current.setLeft(adding);
-				size++;
-				return true;
-			}
+		if(compare > 0) {
 			
-			insert(current.getLeft(), adding);
-			
-		}else if (compare > 0){
 			if(current.getRight() == null) {
 				adding.setParent(current);
 				current.setRight(adding);
@@ -46,20 +37,19 @@ public class BinarySearchTree<E extends Comparable<E>> implements TreeInterface<
 			
 			insert(current.getRight(), adding);
 			
-		}else{
+		}else {
+			
 			if(current.getLeft() == null) {
 				adding.setParent(current);
 				current.setLeft(adding);
 				size++;
-			}else {
-				current.getLeft().setParent(adding);
-				adding.setLeft(current.getLeft());
-				adding.setParent(current);
-				current.setLeft(adding);
-				size++;
+				return true;
 			}
-			return true;
+			
+			insert(current.getLeft(), adding);
+			
 		}
+		
 		return false;
 	}
 
@@ -147,6 +137,7 @@ public class BinarySearchTree<E extends Comparable<E>> implements TreeInterface<
 		else return min(current.getLeft());
 	}
 	
+	@Override
 	public long size() {
 		return this.size;
 	}

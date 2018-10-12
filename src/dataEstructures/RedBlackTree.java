@@ -13,8 +13,33 @@ public class RedBlackTree<E extends Comparable<E>> implements TreeInterface<E> {
 	
 	@Override
 	public void insert(E element) {
+		RedBlackNode<E> adding = new RedBlackNode<>(element);
+		if(this.root == null) {
+			this.root = adding;
+			root.setColor(false);
+			size++;
+		}else{
+			insert(adding);
+		}
+	}
+	
+	private boolean insert(RedBlackNode<E> adding) {
+		return false;
+	}
+	
+	private void leftRotate(RedBlackNode<E> current) {
 		
 	}
+	
+	private void rightRotate(RedBlackNode<E> current) {
+		
+	}
+	
+	private void reColor(RedBlackNode<E> current) {
+		if(current.isColor()) current.setColor(false);
+		else current.setColor(true);
+	}
+	
 
 	@Override
 	public boolean delete(E element) {
@@ -60,6 +85,11 @@ public class RedBlackTree<E extends Comparable<E>> implements TreeInterface<E> {
 	private RedBlackNode<E> min(RedBlackNode<E> current){
 		if(current.getLeft() == null) return current;
 		else return min(current.getLeft());
+	}
+
+	@Override
+	public long size() {
+		return this.size;
 	}
 
 }

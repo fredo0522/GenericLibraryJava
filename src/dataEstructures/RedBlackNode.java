@@ -13,6 +13,7 @@ public class RedBlackNode<E> {
 	
 	public RedBlackNode(E element) {
 		this.element = element;
+		this.color = true;
 	}
 	
 	public E getElement() {

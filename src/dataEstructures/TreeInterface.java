@@ -8,4 +8,5 @@ public interface TreeInterface <T> {
 	public T root();
 	public T max();
 	public T min();
+	public long size();
 }
