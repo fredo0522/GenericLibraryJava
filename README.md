@@ -1,5 +1,5 @@
 # Generic Library
-This repository has the implementations in Java this data structures:
+This repository has the implementations in Java of this data structures:
 * Liked List
 * Binary Tree
 * Stack
